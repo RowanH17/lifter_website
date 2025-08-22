@@ -410,12 +410,6 @@
                 <div>
                     <p>&copy; 2024 Lifter. All rights reserved.</p>
                 </div>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                </div>
             </div>
         </div>
     </footer>
@@ -425,11 +419,11 @@
         document.getElementById('contactForm').addEventListener('submit', function (e) {
             const successMessage = document.getElementById('successMessage');
             const errorMessage = document.getElementById('errorMessage');
-            
+
             // Hide any existing messages
             successMessage.style.display = 'none';
             errorMessage.style.display = 'none';
-            
+
             // Let the form submit naturally to Netlify
             // The form will redirect to a success page or show success message
         });
