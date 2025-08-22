@@ -29,7 +29,7 @@
 
         /* Header */
         header {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255);
             backdrop-filter: blur(10px);
             padding: 1rem 0;
             position: fixed;
@@ -300,7 +300,6 @@
             <div class="header-content">
                 <div class="logo">
                     <img src="lifter_logo.png" alt="Lifter Logo">
-                    Lifter
                 </div>
             </div>
         </div>
@@ -376,7 +375,7 @@
     <section class="contact" id="contact">
         <div class="container">
             <h2 class="section-title">Get In Touch</h2>
-            <form class="contact-form" id="contactForm">
+            <form class="contact-form" id="contactForm" name="contact" method="POST" data-netlify="true">
                 <div class="success-message" id="successMessage">
                     Thank you for your message! We'll get back to you soon.
                 </div>
@@ -422,35 +421,17 @@
     </footer>
 
     <script>
+        // Handle form submission
         document.getElementById('contactForm').addEventListener('submit', function (e) {
-            e.preventDefault();
-
-            const formData = new FormData(this);
-            const data = {
-                name: formData.get('name'),
-                email: formData.get('email'),
-                subject: formData.get('subject'),
-                message: formData.get('message')
-            };
-
-            // Simulate form submission (replace with actual email service)
             const successMessage = document.getElementById('successMessage');
             const errorMessage = document.getElementById('errorMessage');
-
+            
             // Hide any existing messages
             successMessage.style.display = 'none';
             errorMessage.style.display = 'none';
-
-            // Simulate API call
-            setTimeout(() => {
-                // For demo purposes, always show success
-                // In production, handle actual form submission here
-                successMessage.style.display = 'block';
-                this.reset();
-
-                // Scroll to success message
-                successMessage.scrollIntoView({ behavior: 'smooth' });
-            }, 1000);
+            
+            // Let the form submit naturally to Netlify
+            // The form will redirect to a success page or show success message
         });
 
         // Smooth scrolling for anchor links
