@@ -379,7 +379,8 @@
     <section class="contact" id="contact">
         <div class="container">
             <h2 class="section-title">Get In Touch</h2>
-            <form class="contact-form" id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+            <form class="contact-form" id="contactForm" name="contact" method="POST" data-netlify="true"
+                netlify-honeypot="bot-field">
                 <input type="hidden" name="form-name" value="contact" />
                 <p class="hidden">
                     <label>Don't fill this out if you're human: <input name="bot-field" /></label>
@@ -426,7 +427,7 @@
         // Handle form submission
         document.getElementById('contactForm').addEventListener('submit', function (e) {
             e.preventDefault();
-            
+
             const successMessage = document.getElementById('successMessage');
             const errorMessage = document.getElementById('errorMessage');
             const form = this;
@@ -437,21 +438,21 @@
 
             // Submit form data
             const formData = new FormData(form);
-            
+
             fetch('/', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 body: new URLSearchParams(formData).toString()
             })
-            .then(() => {
-                successMessage.style.display = 'block';
-                form.reset();
-                successMessage.scrollIntoView({ behavior: 'smooth' });
-            })
-            .catch((error) => {
-                errorMessage.style.display = 'block';
-                console.error('Error:', error);
-            });
+                .then(() => {
+                    successMessage.style.display = 'block';
+                    form.reset();
+                    successMessage.scrollIntoView({ behavior: 'smooth' });
+                })
+                .catch((error) => {
+                    errorMessage.style.display = 'block';
+                    console.error('Error:', error);
+                });
         });
 
         // Smooth scrolling for anchor links
