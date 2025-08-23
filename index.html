@@ -419,11 +419,11 @@
         document.querySelector('form[name="contact"]').addEventListener('submit', function (e) {
             const successMessage = document.getElementById('successMessage');
             const errorMessage = document.getElementById('errorMessage');
-            
+
             // Hide any existing messages
             successMessage.style.display = 'none';
             errorMessage.style.display = 'none';
-            
+
             // Let Netlify handle the form submission naturally
             // The form will redirect to a success page or show success message
         });
